@@ -3,217 +3,226 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FloodAccess | Flood-adjusted accessibility modelling</title>
-  <meta name="description" content="FloodAccess is a flood-adjusted accessibility modelling tool for research, planning and resilience." />
+  <title>FloodAccess</title>
+  <meta name="description" content="Flood-adjusted accessibility modelling for research, planning and resilience." />
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="#">
-        <span class="logo">
-          <svg viewBox="0 0 64 64" aria-hidden="true">
-            <path d="M32 4C21.5 15.6 13 27.4 13 39a19 19 0 0 0 38 0C51 27.4 42.5 15.6 32 4Z" />
-            <path class="wave" d="M17 39c5 0 5-4 10-4s5 4 10 4 5-4 10-4" />
-            <circle cx="32" cy="28" r="5" />
-          </svg>
-        </span>
-        <span>FloodAccess</span>
-      </a>
 
-      <nav>
-        <a href="#features">Features</a>
-        <a href="#methodology">Methodology</a>
-        <a href="#research">Research</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#downloads">Downloads</a>
-      </nav>
+<header class="header">
+  <div class="container nav">
+    <a href="#" class="brand">
+      <span class="brand-mark">
+        <span class="wave"></span>
+        <span class="pin"></span>
+      </span>
+      <span>FloodAccess</span>
+    </a>
+
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#features">Features</a>
+      <a href="#method">Method</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="label">Flood-adjusted accessibility modelling</p>
+      <h1>Understand how flooding changes access to essential places.</h1>
+      <p class="intro">
+        FloodAccess is a research-focused modelling tool for analysing how flood events affect access to user-defined destinations, including healthcare, schools, shelters, food supplies, workplaces and infrastructure.
+      </p>
+
+      <div class="actions">
+        <a href="#download" class="button primary">Download coming soon</a>
+        <a href="#method" class="button secondary">View methodology</a>
+      </div>
+
+      <div class="mini-stats">
+        <div><strong>GeoTIFF</strong><span>Raster outputs</span></div>
+        <div><strong>GPKG</strong><span>Vector outputs</span></div>
+        <div><strong>QGIS</strong><span>Planned plugin</span></div>
+      </div>
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <p class="eyebrow">GIS-ready flood accessibility modelling</p>
-          <h1>Model how flooding changes access to the places that matter.</h1>
-          <p class="lead">
-            FloodAccess is a flood-adjusted accessibility modelling tool for researchers,
-            planners and resilience professionals. It uses flood data, transport networks
-            and user-defined destinations to measure where access is maintained, delayed or lost.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn primary" href="#downloads">View downloads</a>
-            <a class="btn secondary" href="#methodology">Explore methodology</a>
-          </div>
-
-          <p class="status">Currently in development · Academic beta planned</p>
-        </div>
-
-        <div class="map-card" aria-label="Illustrative flood access map">
-          <div class="map-toolbar">
-            <span></span><span></span><span></span>
-          </div>
-          <div class="map-area">
-            <div class="water water-one"></div>
-            <div class="water water-two"></div>
-            <div class="route route-one"></div>
-            <div class="route route-two"></div>
-            <div class="route route-three blocked"></div>
-            <div class="pin origin">O</div>
-            <div class="pin destination">D</div>
-            <div class="pin isolated">!</div>
-          </div>
-          <div class="map-legend">
-            <span><i class="ok"></i> Accessible</span>
-            <span><i class="bad"></i> Flood disrupted</span>
-            <span><i class="blue"></i> Flood extent</span>
-          </div>
-        </div>
+    <div class="dashboard">
+      <div class="dashboard-top">
+        <span></span><span></span><span></span>
+        <p>Scenario: 1-in-100 flood</p>
       </div>
-    </section>
 
-    <section id="features" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Core capabilities</p>
-          <h2>Designed for flexible access modelling</h2>
-        </div>
-
-        <div class="cards">
-          <article class="card">
-            <h3>Network accessibility</h3>
-            <p>Analyse how roads, paths and transport links are affected by flood depth, velocity and access rules.</p>
-          </article>
-
-          <article class="card">
-            <h3>Raster travel-time surfaces</h3>
-            <p>Generate GIS-ready travel-time outputs for floodplain, walking and cost-distance style analysis.</p>
-          </article>
-
-          <article class="card">
-            <h3>Any destination type</h3>
-            <p>Model access to hospitals, schools, shelters, shops, depots, workplaces or any user-provided locations.</p>
-          </article>
-
-          <article class="card">
-            <h3>GIS outputs</h3>
-            <p>Export results as GeoTIFF, GeoPackage and CSV for use in QGIS and wider spatial analysis workflows.</p>
-          </article>
-        </div>
+      <div class="map">
+        <div class="flood"></div>
+        <div class="road r1"></div>
+        <div class="road r2"></div>
+        <div class="road r3 blocked"></div>
+        <div class="node n1"></div>
+        <div class="node n2"></div>
+        <div class="node n3 bad"></div>
       </div>
-    </section>
 
-    <section id="methodology" class="section blue-section">
-      <div class="container method-grid">
-        <div>
-          <p class="eyebrow light">Methodology</p>
-          <h2>From flood scenario to access result</h2>
-          <p>
-            FloodAccess combines flood hazard layers, origins, destinations and transport
-            data to evaluate how access changes under different flood scenarios.
-          </p>
-        </div>
-
-        <div class="steps">
-          <div class="step">
-            <span>01</span>
-            <h3>Input data</h3>
-            <p>Flood depth, velocity, origins, destinations and transport network layers.</p>
-          </div>
-
-          <div class="step">
-            <span>02</span>
-            <h3>Apply access rules</h3>
-            <p>Define thresholds, travel modes, blocked links and reduced movement speeds.</p>
-          </div>
-
-          <div class="step">
-            <span>03</span>
-            <h3>Generate outputs</h3>
-            <p>Create reachable areas, isolated origins, disrupted routes and travel-time surfaces.</p>
-          </div>
-        </div>
+      <div class="dashboard-bottom">
+        <div><strong>74%</strong><span>Reachable</span></div>
+        <div><strong>26%</strong><span>Disrupted</span></div>
+        <div><strong>18 min</strong><span>Avg delay</span></div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section id="research" class="section">
-      <div class="container research">
-        <div class="research-box">
-          <p class="eyebrow">Research driven</p>
-          <h2>Built around flood-adjusted accessibility analysis</h2>
-          <p>
-            The project is inspired by academic research into how flood events affect
-            access to essential services. The long-term aim is to generalise this approach
-            into a practical tool that can be used for healthcare, emergency planning,
-            infrastructure resilience and other access questions.
-          </p>
-        </div>
-      </div>
-    </section>
+<section id="overview" class="section split">
+  <div class="container split-grid">
+    <div>
+      <p class="label">Overview</p>
+      <h2>Generic access modelling, not limited to healthcare.</h2>
+      <p>
+        FloodAccess is designed to model access from origins to destinations during flood scenarios. Users provide their own data, define what they want to measure access to, and generate GIS-ready outputs.
+      </p>
+    </div>
 
-    <section id="roadmap" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Roadmap</p>
-          <h2>Development plan</h2>
-        </div>
+    <div class="panel-list">
+      <div class="panel-row"><span>Origins</span><b>Villages, homes, grid cells</b></div>
+      <div class="panel-row"><span>Destinations</span><b>Clinics, schools, depots, shelters</b></div>
+      <div class="panel-row"><span>Flood data</span><b>Depth, velocity, extent</b></div>
+      <div class="panel-row"><span>Outputs</span><b>Maps, rasters, routes, summaries</b></div>
+    </div>
+  </div>
+</section>
 
-        <div class="timeline">
-          <div class="timeline-item">
-            <strong>Version 0.1</strong>
-            <span>Network accessibility engine</span>
-          </div>
-          <div class="timeline-item">
-            <strong>Version 0.2</strong>
-            <span>Raster travel-time surfaces</span>
-          </div>
-          <div class="timeline-item">
-            <strong>Version 0.5</strong>
-            <span>Scenario comparison and exports</span>
-          </div>
-          <div class="timeline-item">
-            <strong>Version 1.0</strong>
-            <span>QGIS plugin and academic release</span>
-          </div>
-        </div>
-      </div>
-    </section>
+<section id="features" class="section light">
+  <div class="container">
+    <p class="label">Features</p>
+    <h2>Built for GIS and academic workflows.</h2>
 
-    <section id="downloads" class="section download-section">
-      <div class="container download-card">
-        <div>
-          <p class="eyebrow light">Downloads</p>
-          <h2>FloodAccess is currently in development</h2>
-          <p>
-            The first academic beta release is not yet available. Future releases,
-            documentation and example datasets will be published here.
-          </p>
-        </div>
+    <div class="feature-grid">
+      <article>
+        <h3>Network accessibility</h3>
+        <p>Model blocked or slowed roads, paths and links using flood depth and velocity rules.</p>
+      </article>
 
-        <button disabled>Download coming soon</button>
-      </div>
-    </section>
+      <article>
+        <h3>Raster travel-time surfaces</h3>
+        <p>Create flood-adjusted travel-time surfaces for walking and cost-distance analysis.</p>
+      </article>
 
-    <section id="contact" class="section">
-      <div class="container contact">
-        <h2>Contact</h2>
-        <p>For academic collaboration, testing or licensing enquiries:</p>
-        <a href="mailto:contact@floodaccess.co.uk">contact@floodaccess.co.uk</a>
-      </div>
-    </section>
-  </main>
+      <article>
+        <h3>Flexible destinations</h3>
+        <p>Analyse access to any user-provided destination layer rather than one fixed service type.</p>
+      </article>
 
-  <footer>
-    <div class="container footer-grid">
+      <article>
+        <h3>Scenario comparison</h3>
+        <p>Compare baseline access against different flood scenarios, thresholds and travel modes.</p>
+      </article>
+
+      <article>
+        <h3>GIS-ready export</h3>
+        <p>Export GeoTIFF, GeoPackage and CSV outputs for QGIS and wider analysis.</p>
+      </article>
+
+      <article>
+        <h3>Academic licensing</h3>
+        <p>Planned as free for academic research, teaching and non-commercial use.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="method" class="section method">
+  <div class="container">
+    <p class="label">Methodology</p>
+    <h2>From flood model to access result.</h2>
+
+    <div class="method-flow">
       <div>
-        <strong>FloodAccess</strong>
-        <p>Flood-adjusted accessibility modelling.</p>
+        <span>01</span>
+        <h3>Load spatial data</h3>
+        <p>Flood rasters, origins, destinations, population layers and transport networks.</p>
       </div>
-      <p>© 2026 FloodAccess</p>
+      <div>
+        <span>02</span>
+        <h3>Apply flood rules</h3>
+        <p>Set depth and velocity thresholds, blocked links, reduced speeds and travel modes.</p>
+      </div>
+      <div>
+        <span>03</span>
+        <h3>Run access model</h3>
+        <p>Calculate reachable destinations, isolated origins, delays and travel-time changes.</p>
+      </div>
+      <div>
+        <span>04</span>
+        <h3>Export to GIS</h3>
+        <p>Produce GeoTIFF surfaces, GeoPackage layers and CSV summary tables.</p>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
+
+<section class="section output-section">
+  <div class="container output-grid">
+    <div>
+      <p class="label">Outputs</p>
+      <h2>Designed to drop straight into QGIS.</h2>
+      <p>
+        FloodAccess will prioritise clean, reusable GIS outputs so researchers can continue analysis, cartography and reporting in their existing tools.
+      </p>
+    </div>
+
+    <div class="output-card">
+      <code>travel_time_surface.tif</code>
+      <code>blocked_network.gpkg</code>
+      <code>reachable_origins.gpkg</code>
+      <code>isolated_population.tif</code>
+      <code>scenario_summary.csv</code>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap" class="section light">
+  <div class="container">
+    <p class="label">Roadmap</p>
+    <h2>Development stages.</h2>
+
+    <div class="roadmap">
+      <div><b>0.1</b><span>Network model prototype</span></div>
+      <div><b>0.2</b><span>Raster travel-time engine</span></div>
+      <div><b>0.5</b><span>Scenario comparison tools</span></div>
+      <div><b>1.0</b><span>QGIS plugin release</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="download" class="section download">
+  <div class="container download-box">
+    <div>
+      <p class="label">Downloads</p>
+      <h2>Academic beta in development.</h2>
+      <p>
+        FloodAccess is not yet available for download. Future releases, documentation and example datasets will be published here.
+      </p>
+    </div>
+    <button disabled>Coming soon</button>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <b>FloodAccess</b>
+      <p>Flood-adjusted accessibility modelling.</p>
+    </div>
+    <a href="mailto:contact@floodaccess.co.uk">contact@floodaccess.co.uk</a>
+  </div>
+</footer>
+
 </body>
 </html>

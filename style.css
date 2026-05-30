@@ -611,6 +611,67 @@ h3 {
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
+
+  .interest-section {
+  background: #f6fbff;
+  padding: 90px 0;
+}
+
+.interest-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 42px;
+  box-shadow: var(--shadow);
+}
+
+.interest-form {
+  display: grid;
+  gap: 14px;
+}
+
+.interest-form input,
+.interest-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font: inherit;
+}
+
+.interest-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.interest-form button {
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 22px;
+  background: var(--blue);
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.form-note {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.form-status {
+  font-weight: 800;
+  color: var(--blue-dark);
+}
+
+@media (max-width: 800px) {
+  .interest-card {
+    grid-template-columns: 1fr;
+  }
+}
 }
 
 

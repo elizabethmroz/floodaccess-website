@@ -1,133 +1,219 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FloodAccess | Flood-adjusted accessibility modelling</title>
+  <meta name="description" content="FloodAccess is a flood-adjusted accessibility modelling tool for research, planning and resilience." />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-    color: #222;
-    background: #f8fafc;
-}
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#">
+        <span class="logo">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M32 4C21.5 15.6 13 27.4 13 39a19 19 0 0 0 38 0C51 27.4 42.5 15.6 32 4Z" />
+            <path class="wave" d="M17 39c5 0 5-4 10-4s5 4 10 4 5-4 10-4" />
+            <circle cx="32" cy="28" r="5" />
+          </svg>
+        </span>
+        <span>FloodAccess</span>
+      </a>
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
-}
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#methodology">Methodology</a>
+        <a href="#research">Research</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#downloads">Downloads</a>
+      </nav>
+    </div>
+  </header>
 
-header {
-    background: #0f172a;
-    color: white;
-    padding: 60px 0;
-    text-align: center;
-}
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">GIS-ready flood accessibility modelling</p>
+          <h1>Model how flooding changes access to the places that matter.</h1>
+          <p class="lead">
+            FloodAccess is a flood-adjusted accessibility modelling tool for researchers,
+            planners and resilience professionals. It uses flood data, transport networks
+            and user-defined destinations to measure where access is maintained, delayed or lost.
+          </p>
 
-header h1 {
-    font-size: 3rem;
-}
+          <div class="hero-actions">
+            <a class="btn primary" href="#downloads">View downloads</a>
+            <a class="btn secondary" href="#methodology">Explore methodology</a>
+          </div>
 
-.tagline {
-    margin-top: 10px;
-    color: #cbd5e1;
-}
+          <p class="status">Currently in development · Academic beta planned</p>
+        </div>
 
-nav {
-    background: #1e293b;
-    padding: 15px 0;
-}
+        <div class="map-card" aria-label="Illustrative flood access map">
+          <div class="map-toolbar">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="map-area">
+            <div class="water water-one"></div>
+            <div class="water water-two"></div>
+            <div class="route route-one"></div>
+            <div class="route route-two"></div>
+            <div class="route route-three blocked"></div>
+            <div class="pin origin">O</div>
+            <div class="pin destination">D</div>
+            <div class="pin isolated">!</div>
+          </div>
+          <div class="map-legend">
+            <span><i class="ok"></i> Accessible</span>
+            <span><i class="bad"></i> Flood disrupted</span>
+            <span><i class="blue"></i> Flood extent</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-nav .container {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-}
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Core capabilities</p>
+          <h2>Designed for flexible access modelling</h2>
+        </div>
 
-nav a {
-    color: white;
-    text-decoration: none;
-}
+        <div class="cards">
+          <article class="card">
+            <h3>Network accessibility</h3>
+            <p>Analyse how roads, paths and transport links are affected by flood depth, velocity and access rules.</p>
+          </article>
 
-nav a:hover {
-    text-decoration: underline;
-}
+          <article class="card">
+            <h3>Raster travel-time surfaces</h3>
+            <p>Generate GIS-ready travel-time outputs for floodplain, walking and cost-distance style analysis.</p>
+          </article>
 
-.hero {
-    text-align: center;
-    padding: 80px 0;
-}
+          <article class="card">
+            <h3>Any destination type</h3>
+            <p>Model access to hospitals, schools, shelters, shops, depots, workplaces or any user-provided locations.</p>
+          </article>
 
-.hero h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-}
+          <article class="card">
+            <h3>GIS outputs</h3>
+            <p>Export results as GeoTIFF, GeoPackage and CSV for use in QGIS and wider spatial analysis workflows.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-.hero p {
-    max-width: 700px;
-    margin: auto;
-}
+    <section id="methodology" class="section blue-section">
+      <div class="container method-grid">
+        <div>
+          <p class="eyebrow light">Methodology</p>
+          <h2>From flood scenario to access result</h2>
+          <p>
+            FloodAccess combines flood hazard layers, origins, destinations and transport
+            data to evaluate how access changes under different flood scenarios.
+          </p>
+        </div>
 
-.button {
-    display: inline-block;
-    margin-top: 25px;
-    background: #2563eb;
-    color: white;
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 6px;
-}
+        <div class="steps">
+          <div class="step">
+            <span>01</span>
+            <h3>Input data</h3>
+            <p>Flood depth, velocity, origins, destinations and transport network layers.</p>
+          </div>
 
-.content {
-    padding: 70px 0;
-}
+          <div class="step">
+            <span>02</span>
+            <h3>Apply access rules</h3>
+            <p>Define thresholds, travel modes, blocked links and reduced movement speeds.</p>
+          </div>
 
-.alt {
-    background: white;
-}
+          <div class="step">
+            <span>03</span>
+            <h3>Generate outputs</h3>
+            <p>Create reachable areas, isolated origins, disrupted routes and travel-time surfaces.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-.content h2 {
-    margin-bottom: 20px;
-}
+    <section id="research" class="section">
+      <div class="container research">
+        <div class="research-box">
+          <p class="eyebrow">Research driven</p>
+          <h2>Built around flood-adjusted accessibility analysis</h2>
+          <p>
+            The project is inspired by academic research into how flood events affect
+            access to essential services. The long-term aim is to generalise this approach
+            into a practical tool that can be used for healthcare, emergency planning,
+            infrastructure resilience and other access questions.
+          </p>
+        </div>
+      </div>
+    </section>
 
-.content ul {
-    margin-left: 20px;
-}
+    <section id="roadmap" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Roadmap</p>
+          <h2>Development plan</h2>
+        </div>
 
-.roadmap {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-top: 25px;
-}
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>Version 0.1</strong>
+            <span>Network accessibility engine</span>
+          </div>
+          <div class="timeline-item">
+            <strong>Version 0.2</strong>
+            <span>Raster travel-time surfaces</span>
+          </div>
+          <div class="timeline-item">
+            <strong>Version 0.5</strong>
+            <span>Scenario comparison and exports</span>
+          </div>
+          <div class="timeline-item">
+            <strong>Version 1.0</strong>
+            <span>QGIS plugin and academic release</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    border: 1px solid #dbe2ea;
-}
+    <section id="downloads" class="section download-section">
+      <div class="container download-card">
+        <div>
+          <p class="eyebrow light">Downloads</p>
+          <h2>FloodAccess is currently in development</h2>
+          <p>
+            The first academic beta release is not yet available. Future releases,
+            documentation and example datasets will be published here.
+          </p>
+        </div>
 
-.download-box {
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    border: 1px solid #dbe2ea;
-    max-width: 500px;
-}
+        <button disabled>Download coming soon</button>
+      </div>
+    </section>
 
-.download-box button {
-    margin-top: 15px;
-    padding: 12px 24px;
-    border: none;
-    background: #94a3b8;
-    color: white;
-    border-radius: 6px;
-}
+    <section id="contact" class="section">
+      <div class="container contact">
+        <h2>Contact</h2>
+        <p>For academic collaboration, testing or licensing enquiries:</p>
+        <a href="mailto:contact@floodaccess.co.uk">contact@floodaccess.co.uk</a>
+      </div>
+    </section>
+  </main>
 
-footer {
-    background: #0f172a;
-    color: white;
-    text-align: center;
-    padding: 25px;
-}
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>FloodAccess</strong>
+        <p>Flood-adjusted accessibility modelling.</p>
+      </div>
+      <p>© 2026 FloodAccess</p>
+    </div>
+  </footer>
+</body>
+</html>

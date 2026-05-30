@@ -223,19 +223,19 @@ h3 {
 
 .dashboard-top p {
   margin-left: auto;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .map {
   position: relative;
-  height: 330px;
-  background:
-    linear-gradient(90deg, rgba(148, 163, 184, 0.22) 1px, transparent 1px),
-    linear-gradient(rgba(148, 163, 184, 0.22) 1px, transparent 1px),
-    #f8fcff;
-  background-size: 32px 32px;
+  height: 280px;
+  background: #f8fcff;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .flood {
@@ -296,29 +296,21 @@ h3 {
 .n3 { right: 102px; bottom: 70px; background: var(--red); }
 
 .dashboard-bottom {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  padding: 16px 20px;
   border-top: 1px solid var(--line);
 }
 
 .dashboard-bottom div {
-  padding: 18px;
-  border-right: 1px solid var(--line);
-}
-
-.dashboard-bottom div:last-child {
-  border-right: 0;
-}
-
-.dashboard-bottom strong {
-  color: var(--navy);
-  display: block;
-  font-size: 1.35rem;
+  padding: 0;
+  border: 0;
 }
 
 .dashboard-bottom span {
+  display: block;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  text-align: center;
 }
 
 .section {
@@ -730,12 +722,11 @@ h3 {
   }
 }
 
-  .model-gif {
+ .model-gif {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
-    border-radius: inherit;
 }
 
 

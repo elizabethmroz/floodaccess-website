@@ -9,18 +9,6 @@
 </head>
 <body>
 
-  <div class="release-banner">
-  <div class="container release-inner">
-    <span>FloodAccess is not yet released. Register your interest for academic beta access.</span>
-
-    <form class="interest-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <button type="submit">Register interest</button>
-    </form>
-  </div>
-</div>
-  
 <header class="header">
   <div class="container nav">
     <a href="#" class="brand">
@@ -33,12 +21,10 @@
 
     <nav>
       <a href="#overview">Overview</a>
-      <a href="#about">About</a>
       <a href="#features">Features</a>
       <a href="#method">Method</a>
       <a href="#roadmap">Roadmap</a>
       <a href="#download">Download</a>
-      
     </nav>
   </div>
 </header>
@@ -66,22 +52,29 @@
       </div>
     </div>
 
-    <div class="paper-figure">
-  <div class="figure-top">
-    <span></span><span></span><span></span>
-    <p>Published research example</p>
-  </div>
+    <div class="dashboard">
+      <div class="dashboard-top">
+        <span></span><span></span><span></span>
+        <p>Scenario: 1-in-100 flood</p>
+      </div>
 
-  <img
-    src="https://media.springernature.com/lw1200/springer-static/image/art%3A10.1186%2Fs12942-023-00338-3/MediaObjects/12942_2023_338_Fig6_HTML.png"
-    alt="Percentage of women unable to walk to maternal services across flood months from Mroz et al. 2023"
-  >
+      <div class="map">
+        <div class="flood"></div>
+        <div class="road r1"></div>
+        <div class="road r2"></div>
+        <div class="road r3 blocked"></div>
+        <div class="node n1"></div>
+        <div class="node n2"></div>
+        <div class="node n3 bad"></div>
+      </div>
 
-  <div class="figure-caption">
-    <strong>Figure from Mroz et al. 2023.</strong>
-    Percentage unable to walk to maternal services across the 2017–2018 flood period.
+      <div class="dashboard-bottom">
+        <div><strong>74%</strong><span>Reachable</span></div>
+        <div><strong>26%</strong><span>Disrupted</span></div>
+        <div><strong>18 min</strong><span>Avg delay</span></div>
+      </div>
+    </div>
   </div>
-</div>
 </section>
 
 <section id="overview" class="section split">
@@ -103,44 +96,6 @@
   </div>
 </section>
 
-  <section id="about" class="section about-section">
-  <div class="container about-grid">
-    <div>
-      <p class="label">About the project</p>
-      <h2>Research methodology shaped into practical software.</h2>
-      <p>
-        FloodAccess is being developed from research led by Dr Elizabeth Mroz into how seasonal flooding affects geographical access to essential services. Beth’s work couples flood modelling with GIS-based accessibility analysis, using flood depth, velocity and extent to model how access changes through time.
-      </p>
-      <p>
-        The original research focused on maternal healthcare access in the Barotse Floodplain, Zambia. FloodAccess aims to generalise that methodology so researchers can model access to any destination type using their own spatial data.
-      </p>
-      <p>
-        George Lawley is supporting the project from the software, systems and implementation side, helping turn the academic methodology into a usable tool for GIS and research workflows.
-      </p>
-    </div>
-
-    <div class="research-links">
-      <h3>Research links</h3>
-
-      <a href="https://link.springer.com/article/10.1186/s12942-023-00338-3" target="_blank">
-        Impacts of seasonal flooding on geographical access to maternal healthcare
-      </a>
-
-      <a href="https://etheses.whiterose.ac.uk/id/eprint/29785/" target="_blank">
-        Incorporating seasonal flooding into frameworks modelling geographical access to health services
-      </a>
-
-      <a href="https://environment.leeds.ac.uk/geography/pgr/9587/elizabeth-mroz" target="_blank">
-        Elizabeth Mroz — University of Leeds profile
-      </a>
-
-      <p class="licence-note">
-        Figure used under Creative Commons Attribution 4.0 from Mroz et al. 2023.
-      </p>
-    </div>
-  </div>
-</section>
-  
 <section id="features" class="section light">
   <div class="container">
     <p class="label">Features</p>

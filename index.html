@@ -248,7 +248,66 @@
     <button disabled>Coming soon</button>
   </div>
 </section>
+<section class="interest-section" id="register">
+  <div class="container interest-card">
+    <div>
+      <p class="label">Register interest</p>
+      <h2>Be notified when FloodAccess is available.</h2>
+      <p>
+        Register your interest for academic beta access, testing opportunities
+        and future release updates.
+      </p>
+    </div>
 
+    <form id="interestForm" class="interest-form">
+      <input type="text" id="name" name="name" placeholder="Your name" required>
+      <input type="email" id="email" name="email" placeholder="Your email" required>
+      <textarea id="message" name="message" placeholder="Optional message"></textarea>
+
+      <button type="submit">Register interest</button>
+
+      <p class="form-note">
+        We’ll only use your details to contact you about FloodAccess updates and beta access.
+      </p>
+
+      <p id="formStatus" class="form-status"></p>
+    </form>
+  </div>
+</section>
+
+<script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbx9QztnI-OpC0QyO4FYipaV3qmT0aPc3Z_wu5eIMSqo5uqrQFi0rMXyLd6okfaCFA4kzg/exec";
+  const form = document.getElementById("interestForm");
+  const status = document.getElementById("formStatus");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    status.textContent = "Submitting...";
+
+    const data = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      message: document.getElementById("message").value
+    };
+
+    try {
+      await fetch(scriptURL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      status.textContent = "Thank you — your interest has been registered.";
+      form.reset();
+    } catch (error) {
+      status.textContent = "Something went wrong. Please try again.";
+    }
+  });
+</script>
 </main>
 
 <footer class="footer">

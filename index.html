@@ -15,6 +15,10 @@
       <img src="LOGO.png" alt="FloodAccess logo" class="brand-logo" />
     </a>
 
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-label="Open navigation">
+      <span></span>
+    </button>
+
     <nav>
       <a href="#overview">Overview</a>
       <a href="#about">About</a>
@@ -291,6 +295,22 @@
     } catch (error) {
       status.textContent = "Something went wrong. Please try again.";
     }
+  });
+
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('header .nav nav');
+
+  navToggle.addEventListener('click', function () {
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', String(!expanded));
+    navMenu.classList.toggle('open');
+  });
+
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navMenu.classList.remove('open');
+    });
   });
 </script>
 </main>

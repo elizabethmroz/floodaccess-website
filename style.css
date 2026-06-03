@@ -75,6 +75,55 @@ nav {
   flex-wrap: wrap;
 }
 
+.nav-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  position: relative;
+}
+
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #334155;
+  border-radius: 999px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-toggle span::before {
+  top: -10px;
+}
+
+.nav-toggle span::after {
+  bottom: -10px;
+}
+
+.nav-toggle[aria-expanded="true"] span {
+  background: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] span::before {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span::after {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
 nav a {
   color: #334155;
   text-decoration: none;
@@ -478,6 +527,8 @@ h3 {
   border-radius: 28px;
   padding: 26px;
   box-shadow: var(--shadow);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .output-card code {
@@ -488,6 +539,9 @@ h3 {
   border-radius: 14px;
   padding: 14px 16px;
   margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .roadmap {
@@ -562,14 +616,25 @@ h3 {
   margin: 0 auto;
 }
 
+.signup-copy {
+  display: grid;
+  gap: 18px;
+}
+
 .signup-copy p {
   color: var(--muted);
   font-size: 1.05rem;
+  max-width: 720px;
 }
 
 .signup-small {
   margin-top: 18px;
   padding: 18px 20px;
+  background: var(--blue-soft);
+  border-left: 4px solid var(--blue);
+  border-radius: 14px;
+  font-weight: 700;
+  max-width: 720px;
 }
 
 .signup-form {
@@ -689,6 +754,32 @@ h3 {
   .download-box {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .nav {
+    position: relative;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+  }
+
+  nav.open {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 18px;
+  }
+
+  nav a {
+    width: 100%;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(51, 65, 85, 0.12);
   }
 
   .footer-grid {

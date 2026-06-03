@@ -95,9 +95,14 @@ nav a:hover {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 0.9fr;
-  gap: 58px;
+  grid-template-columns: 1fr;
+  gap: 48px;
   align-items: center;
+}
+
+.hero-copy {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .label {
@@ -534,6 +539,106 @@ h3 {
   font-weight: 900;
   cursor: not-allowed;
   white-space: nowrap;
+}
+
+.signup-section {
+  background: linear-gradient(180deg, rgba(231, 244, 255, 0.95), rgba(246, 251, 255, 1));
+  padding: 96px 0;
+}
+
+.signup-card {
+  display: grid;
+  grid-template-columns: 0.95fr 1.15fr;
+  gap: 48px;
+  align-items: start;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 32px;
+  padding: 48px;
+  box-shadow: var(--shadow);
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.signup-copy p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.signup-small {
+  margin-top: 18px;
+  padding: 18px 20px;
+}
+
+.signup-form {
+  display: grid;
+  gap: 20px;
+  background: var(--navy);
+  padding: 36px;
+  border-radius: 30px;
+  box-shadow: 0 30px 70px rgba(6, 24, 38, 0.2);
+  min-width: 0;
+}
+
+.form-row label {
+  color: #dbeafe;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.signup-form input,
+.signup-form textarea {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.12);
+  color: white;
+  border-radius: 18px;
+  padding: 16px 18px;
+  font: 1rem Arial, Helvetica, sans-serif;
+  outline: none;
+}
+
+.signup-form input::placeholder,
+.signup-form textarea::placeholder {
+  color: #aacde8;
+}
+
+.signup-form input:focus,
+.signup-form textarea:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(94, 215, 255, 0.18);
+}
+
+.signup-form textarea {
+  min-height: 240px;
+  resize: vertical;
+}
+
+.signup-form button {
+  border: 0;
+  border-radius: 999px;
+  padding: 16px 28px;
+  background: var(--cyan);
+  color: var(--navy);
+  font-weight: 900;
+  font-size: 1rem;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.signup-form button:hover {
+  filter: brightness(1.06);
+}
+
+.privacy-note {
+  color: #cbe5ff;
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.form-status {
+  color: var(--cyan);
+  font-weight: 900;
 }
 
 .footer {
